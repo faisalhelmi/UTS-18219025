@@ -140,7 +140,7 @@ async def read_own_items(current_user: User = Depends(get_current_active_user)):
     return [{"item_id": "Foo", "owner": current_user.username}]
 
 @app.get('/menu/{item_id}') 
-async def read_menu(item_id: int): 
+async def read_menu(item_id: int, current_user: User = Depends(get_current_active_user)): 
 
     for menu_item in data['menu']:
         if menu_item['id'] == item_id:
@@ -152,7 +152,7 @@ async def read_menu(item_id: int):
 
 
 @app.post('/menu/')
-async def add_menu(name:str):
+async def add_menu(name:str, current_user: User = Depends(get_current_active_user)):
     id=1
     
     if(len(data['menu'])>0):
@@ -173,7 +173,7 @@ async def add_menu(name:str):
 
 
 @app.put('/menu/{item_id}') 
-async def update_menu(item_id: int,name: str): 
+async def update_menu(item_id: int,name: str, current_user: User = Depends(get_current_active_user)): 
 
     for menu_item in data['menu']:
         if menu_item['id'] == item_id:
@@ -190,7 +190,7 @@ async def update_menu(item_id: int,name: str):
 
 
 @app.delete('/menu/{item_id}') 
-async def delete_menu(item_id: int,name: str): 
+async def delete_menu(item_id: int,name: str, current_user: User = Depends(get_current_active_user)): 
 
     for menu_item in data['menu']:
         if menu_item['id'] == item_id:
