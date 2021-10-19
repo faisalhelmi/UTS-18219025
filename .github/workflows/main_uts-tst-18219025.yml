@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'UTS-TST-18219025'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_936430ECB668458591CE56C1AC054762 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6D0D5113C52D4E98B56A0274DCCE4B49 }}
